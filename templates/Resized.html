@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+HomePage
+{% endblock  %}}
+
+{% block body %}
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}?{% now 'U'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Resized Image Page</title>
+</head>
+
+
+<body>
+
+<div class="header">
+        <div class="left-header">
+            <ul>
+                
+
+                    <li class="#"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a></a></li>
+                    <li class="#"><a href="/UploadImage"><i class="fa fa-image" aria-hidden="true"></i>Add New Image</a></a></li>
+                
+            </ul>
+        </div>
+        <br><br>
+
+            <div class="content-table">
+        <h1>Resized Image List</h1>
+        <table class="table ">
+            <thead>
+                <tr>
+
+                    <th>Number of Image</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                    {% if Image.Image %}
+                        <img src="{{ Image.image.url }}">
+                    {% endif %}
+    
+
+                    {% for Image in Images %}
+                    <tr>
+                    <td>
+                        <h2><a href="ImageDetail/{{ Image.id }}" style="color:black">{{ Image.Name }}</a></h2>
+                    </td>
+                    {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr>
+
+    <div class="pagination">
+        {% if is_paginated %}
+        <nav class="navigation">
+            <ul class="pagination justify-content-end">
+                {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a href="{{request.path}}?page={{ page_obj.previous_page_number }}" class="page-link">Previous</a>
+                </li>
+                {% endif %}
+
+                <li class="page-item ">
+                    <a href="#" class="page-link">{{ page_obj.number}}</a>
+                </li>
+
+                {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a href="{{request.path}}?page={{ page_obj.next_page_number }}" class="page-link">Next</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+
+</body>
+{% endblock %}
+
+    

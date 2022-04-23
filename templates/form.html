@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}
+Add New Customer
+{% endblock  %}}
+
+{% block body %}
+{% load static %}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}?{% now 'U'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Upload Image Page</title>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <div class="left-header">
+            <ul>
+            
+
+                <li class="#"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a></a></li>
+                <li class="#"><a href="/UploadImage"><i class="fa fa-image" aria-hidden="true"></i>Add New Image</a></a></li>
+        
+            </ul>
+        </div>
+        <br><br>
+
+
+        <div class="container">
+        
+
+            <ul class="list-group" id="myList">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <h1> Upload Image </h1>
+                    <li class="list-group-item">{{ form.as_p}}</li>
+                    <input type="submit" value="Submit" class="btn btn-secondary">
+                    <a href="/"><button type="button" class="btn btn-secondary">Return</button>
+                </form>
+            </ul>
+        </div>
+
+</body>
+
+{% endblock %}

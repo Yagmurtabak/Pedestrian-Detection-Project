@@ -1,0 +1,116 @@
+.header {
+
+    font-family: Times New Roman;
+    color: rgb(37, 36, 36);
+  
+  }
+  
+  .mid-header {
+    padding: 5px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+  
+  }
+  
+  .mid-header [type='submit'] {
+    height: 35px;
+    background-color: rgba(34, 32, 32, 0.966);
+    border-radius: 10px;
+    color: rgb(248, 248, 248);
+  }
+  
+  .left-header {
+  
+    padding: 15px;
+    background: rgb(34, 32, 32);
+  
+  
+  }
+  
+  .left-header li {
+    display: inline;
+    width: 150px;
+    margin: 15px;
+    padding: 10px;
+  
+  }
+  
+  .left-header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+  
+  }
+  
+  .container {
+    font-family: Times New Roman;
+    color: rgb(37, 36, 36);
+  
+  }
+  
+  .active,
+  .left-header ul li:hover {
+    background: rgb(131, 130, 130);
+    border-radius: 20px;
+  }
+  
+  .left-header .fa {
+    margin-right: 8px;
+  }
+  
+  .navigation a {
+    font-family: Times New Roman;
+    color: rgb(37, 36, 36);
+  }
+  
+  .pagination ul li a {
+    color: black;
+    text-align: center;
+  }
+  
+  
+  .content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+  
+  }
+  
+  .content-table h1 {
+    font-family: Times New Roman;
+    font-size: 40px;
+  }
+  
+  
+  .content-table thead tr {
+    background-color: rgb(34, 32, 32);
+    color: bisque;
+    font-family: Times New Roman;
+    font-size: 15px;
+  
+  }
+  
+  .content-table .table tr td {
+    padding: 5px 10px;
+    font-family: Times New Roman;
+  
+  }
+  
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: rgba(184, 181, 187, 0.24);
+  }
+  
+  .content-table tbody tr:last-of-type {
+    border-bottom: 1px solid black;
+  }
+  
+  .authorized li {
+  
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-radius: 20px;
+    font-size: 20px;
+  }

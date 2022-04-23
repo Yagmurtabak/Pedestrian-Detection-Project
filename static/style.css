@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Times New Roman;
+
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+    background: linear-gradient(to right, #f8f8ff 0%, #000000 100%);
+}
+
+.container {
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+    padding: 35px 40px;
+    border-radius: 5px;
+
+}
+
+.container form .title {
+    font-size: 40px;
+    font-weight: 600;
+    margin: 20px 0 10px 0;
+}
+
+.container form .title:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 33px;
+    bottom: 2px;
+    left: 0;
+    border-radius: 5px;
+    background: #1da1f2;
+}
+
+.container form .input-box {
+    width: 100%;
+    height: 100%;
+    margin-top: 25px;
+    position: relative;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: 250;
+    
+
+}
+
+.container form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border: none;
+
+
+}
+
+.container form .input-box input[type='submit'] {
+    height: 40px;
+    background-color: gold;
+    border-radius: 20px;
+}
+
+.container form .input-box .underline:before {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    left: 0;
+    bottom: 0;
+}
+
+
+.container .Sign-Up a{
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+    height: 40px;
+    background-color:grey;
+    border-radius: 20px;
+    
+}
+
+
+.container .Sign-Up{
+    margin-top: 50px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 44px;
+    border-radius: 20px;
+}
