@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+Detect Pedestrian with SSD
+{% endblock  %}}
+
+{% block body %}
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}?{% now 'U'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <div class="left-header">
+            <ul>
+            
+
+                <li class="#"><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home Page</a></a></li>
+                <li class="#"><a href="/UploadImage"><i class="fa fa-image" aria-hidden="true"></i>Add New Image</a></a></li>
+        
+            </ul>
+        </div>
+        <br><br>
+
+
+
+    <div class="container">
+        <div id="uploadedImage"></div>
+            <h1> Detect Pedestrian with SSD </h1>
+            
+                <form action="" enctype="multipart/form-data" id="PedestrianDetectSSDForm" method="post"> 
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-secondary" type="submit">Submit</button>
+                    <a href="/"><button type="button" class="btn btn-secondary">Return</button>
+                </form>
+           
+        </div>
+        <div class="container">
+            {% if inference_img %}
+            <img src="{{inference_img}}" class="img-fluid" width="500" height="500" />
+            {% else %}
+                The inferenced image will be displayed here.
+            {% endif %}
+        
+        </div>    
+    </div>
+</body>
+
+{% endblock %}
+

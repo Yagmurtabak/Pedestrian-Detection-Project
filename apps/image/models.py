@@ -3,6 +3,8 @@ import os
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from config.models import CreationModificationDateBase
+from image.object_detection import object_detection
+
 
 
 class ImageModel(CreationModificationDateBase):
@@ -20,3 +22,13 @@ class ImageModel(CreationModificationDateBase):
 class Image(models.Model):
     Name = models.CharField(max_length=20)
     Image = models.FileField(null=False , blank=False)
+
+
+class PedestrianDetectSSD(models.Model):
+    image = models.ImageField(_("image"), upload_to='images')
+
+    def get_absolute_url(self):
+        return (u'/DetectPedestrianSSD/' )
+
+class Detector(models.Model):
+    det = object_detection()

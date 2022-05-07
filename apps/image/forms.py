@@ -1,5 +1,5 @@
 from django import forms
-from .models import ImageModel
+from .models import ImageModel,PedestrianDetectSSD
 from .models import Image
 
 
@@ -16,3 +16,9 @@ class ImageForm(forms.ModelForm):
 
         fields = [
            'Name', 'Image']
+
+
+class PedestrianDetectSSDForm(forms.ModelForm):
+    class Meta:
+        model = PedestrianDetectSSD
+        fields = ['image']

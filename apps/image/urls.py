@@ -12,6 +12,7 @@ app_name = "image"
 
 urlpatterns = [
     path("DetectPedestrianYOLO", views.UploadImage.as_view(), name="upload_image_url"),
+    path("DetectPedestrianSSD/",  views.UploadImageSSD.as_view(), name="upload_imagee_url"),
     path('admin/', admin.site.urls),
     path("", home_view),
     path('UploadImage' ,UploadImage_view),
